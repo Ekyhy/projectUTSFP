@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +17,9 @@
     <div class="container mx-auto p-6">
         <!-- Header -->
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold text-blue-600">Dashboard Mahasiswa
+            <h1 class="text-3xl font-bold text-blue-600">Selamat Datang, <?php echo $_SESSION['username']; ?>!
             </h1>
-            <a href="login.php" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Logout</a>
+            <a href="logout.php" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Logout</a>
         </div>
 
         <!-- Card Container -->
