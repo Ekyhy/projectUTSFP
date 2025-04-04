@@ -1,7 +1,7 @@
 self.addEventListener('push', function(event) {
     var options = {
         body: event.data.text(),
-        icon: '/icon.png',
+        icon: '/projectpendaki/public/icon.png',
         badge: '/badge.png'
     };
 

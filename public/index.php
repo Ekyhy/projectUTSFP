@@ -34,13 +34,13 @@ function sendNotification() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: userId })
     })
-    .then(response => response.text()) // Ambil response dalam format teks dulu
+    .then(response => response.text()) 
     .then(text => {
-        console.log("📩 Respon mentah:", text); // Debug response sebelum di-parse
+        console.log("📩 Respon mentah:", text); 
 
         let data;
         try {
-            data = JSON.parse(text);  // Coba parse JSON
+            data = JSON.parse(text); 
         } catch (error) {
             console.error("❌ Gagal parse JSON:", error);
             return;
@@ -58,7 +58,7 @@ function sendNotification() {
                 data.forEach(notification => {
                     registration.showNotification(notification.title, {
                         body: notification.body,
-                        icon: '/icon.png',
+                        icon: '/projectpendaki/public/icon.png',
                         vibrate: [200, 100, 200]
                     });
                 });
