@@ -14,6 +14,7 @@ function addUser(string $username, string $password, ?string $email): bool {
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->bindParam(':email', $email);
+    
 
         // Eksekusi query
         $stmt->execute();
